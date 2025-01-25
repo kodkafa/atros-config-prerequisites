@@ -4,9 +4,14 @@ interface TaskBoilerPlate {
   system?: System | System;
 }
 
+interface PackageWithSystem {
+  system?: System;
+  list: string[];
+}
+
 interface InstallTask extends TaskBoilerPlate {
   type: "install";
-  packages: string[];
+  packages: (string | PackageWithSystem)[];
   params?: string[];
 }
 
