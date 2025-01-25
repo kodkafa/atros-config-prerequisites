@@ -7,6 +7,7 @@ interface TaskBoilerPlate {
 interface PackagesWithSettings {
   system?: System;
   list: string[];
+  params?: (string | ParamsWithSystem)[];
 }
 
 export interface ParamsWithSystem {
