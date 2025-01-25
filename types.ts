@@ -4,15 +4,20 @@ interface TaskBoilerPlate {
   system?: System | System;
 }
 
-interface PackageWithSystem {
+interface PackagesWithSettings {
   system?: System;
+  list: string[];
+}
+
+export interface ParamsWithSystem {
+  system: System;
   list: string[];
 }
 
 interface InstallTask extends TaskBoilerPlate {
   type: "install";
-  packages: (string | PackageWithSystem)[];
-  params?: string[];
+  packages: (string | PackagesWithSettings)[];
+  params?: (string | ParamsWithSystem)[];
 }
 
 interface ShellTask extends TaskBoilerPlate {
